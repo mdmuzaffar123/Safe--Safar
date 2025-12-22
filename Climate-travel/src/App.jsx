@@ -5,6 +5,7 @@ import Search from "./components/Search";
 import RiskCard from "./components/RiskCard";
 import RouteAdvice from "./components/RouteAdvice";
 import MapRouteCard from "./components/MapRouteCard";
+import AQICard from "./components/AQICard";
 import "./App.css";
 
 function App() {
@@ -26,8 +27,18 @@ function App() {
     try {
       const apiKey = import.meta.env.VITE_WEATHER_API_KEY;
       const weather = await axios.get(
-        `https://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${encodeURIComponent(city)}&aqi=no`
+        `https://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${encodeURIComponent(city)}&aqi=yes`
       );
+
+      const aqiValue = weather.data.current.air_quality?.us_epa_index || 3;
+      const aqiMapping = {
+        1: 25,   // Good
+        2: 75,   // Moderate
+        3: 125,  // Unhealthy for Sensitive Groups
+        4: 175,  // Unhealthy
+        5: 225,  // Very Unhealthy
+        6: 300,  // Hazardous
+      };
 
       setData({
         city: weather.data.location.name,
@@ -39,7 +50,7 @@ function App() {
         wind: weather.data.current.wind_kph,
         condition: weather.data.current.condition.text,
         icon: weather.data.current.condition.icon,
-        aqi: 50,
+        aqi: aqiMapping[aqiValue] || 75,
         latitude: weather.data.location.lat,
         longitude: weather.data.location.lon,
       });
@@ -87,6 +98,7 @@ function App() {
               <RiskCard data={data} />
               <RouteAdvice data={data} />
               <MapRouteCard data={data} />
+              <AQICard data={data} />
             </div>
           )}
         </section>
