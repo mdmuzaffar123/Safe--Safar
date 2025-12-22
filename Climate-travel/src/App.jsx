@@ -4,6 +4,7 @@ import Header from "./components/Headers";
 import Search from "./components/Search";
 import RiskCard from "./components/RiskCard";
 import RouteAdvice from "./components/RouteAdvice";
+import MapRouteCard from "./components/MapRouteCard";
 import "./App.css";
 
 function App() {
@@ -39,6 +40,8 @@ function App() {
         condition: weather.data.current.condition.text,
         icon: weather.data.current.condition.icon,
         aqi: 50,
+        latitude: weather.data.location.lat,
+        longitude: weather.data.location.lon,
       });
     } catch (err) {
       setError("City not found. Please try another search.");
@@ -83,6 +86,7 @@ function App() {
             <div className="results-container">
               <RiskCard data={data} />
               <RouteAdvice data={data} />
+              <MapRouteCard data={data} />
             </div>
           )}
         </section>

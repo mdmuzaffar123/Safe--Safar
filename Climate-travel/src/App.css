@@ -811,6 +811,233 @@ body {
   margin-right: 0.5rem;
 }
 
+/* Map Route Card Styles */
+.map-route-card {
+  background: white;
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+  transition: background 0.3s ease, color 0.3s ease;
+  margin-top: 2rem;
+}
+
+.dark-mode .map-route-card {
+  background: #2a2a3e;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  color: #e0e0e0;
+}
+
+.route-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1.5rem;
+  gap: 1rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 2px solid #f0f0f0;
+  transition: border-color 0.3s ease;
+}
+
+.dark-mode .route-header {
+  border-bottom-color: #3a3a4e;
+}
+
+.route-title-section {
+  flex: 1;
+}
+
+.route-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 0.25rem;
+  transition: color 0.3s ease;
+}
+
+.dark-mode .route-title {
+  color: #e0e0e0;
+}
+
+.route-subtitle {
+  color: #666;
+  font-size: 0.95rem;
+  transition: color 0.3s ease;
+}
+
+.dark-mode .route-subtitle {
+  color: #aaa;
+}
+
+.route-icon-large {
+  font-size: 3rem;
+  min-width: 80px;
+  text-align: center;
+}
+
+.route-recommendation {
+  background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
+  padding: 1.5rem;
+  border-radius: 8px;
+  margin-bottom: 2rem;
+  text-align: center;
+  transition: background 0.3s ease;
+}
+
+.dark-mode .route-recommendation {
+  background: linear-gradient(135deg, rgba(102, 126, 234, 0.15) 0%, rgba(118, 75, 162, 0.15) 100%);
+}
+
+.route-recommendation p {
+  color: #333;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.6;
+  transition: color 0.3s ease;
+}
+
+.dark-mode .route-recommendation p {
+  color: #e0e0e0;
+}
+
+.route-map-container {
+  margin-bottom: 2rem;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease;
+}
+
+.dark-mode .route-map-container {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.route-map {
+  width: 100%;
+  height: 400px;
+  background: #f0f0f0;
+  border-radius: 8px;
+  z-index: 1;
+}
+
+.dark-mode .route-map {
+  background: #3a3a4e;
+}
+
+/* Leaflet CSS Overrides */
+.route-map .leaflet-control-attribution {
+  background: rgba(255, 255, 255, 0.8);
+  font-size: 0.75rem;
+  padding: 0.25rem 0.5rem;
+}
+
+.dark-mode .route-map .leaflet-control-attribution {
+  background: rgba(58, 58, 78, 0.9);
+  color: #e0e0e0;
+}
+
+.dark-mode .route-map .leaflet-control-attribution a {
+  color: #a0c4ff;
+}
+
+.route-details {
+  margin-bottom: 2rem;
+}
+
+.route-condition-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+}
+
+.route-condition-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.condition-label {
+  font-size: 0.85rem;
+  color: #666;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.dark-mode .condition-label {
+  color: #aaa;
+}
+
+.condition-bar {
+  height: 8px;
+  background: #e0e0e0;
+  border-radius: 4px;
+  overflow: hidden;
+  transition: background 0.3s ease;
+}
+
+.dark-mode .condition-bar {
+  background: #4a4a5e;
+}
+
+.condition-fill {
+  height: 100%;
+  border-radius: 4px;
+  transition: width 0.3s ease;
+}
+
+.condition-value {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #333;
+  transition: color 0.3s ease;
+}
+
+.dark-mode .condition-value {
+  color: #e0e0e0;
+}
+
+.route-suggestions {
+  background: #f9f9f9;
+  padding: 1.5rem;
+  border-radius: 8px;
+  transition: background 0.3s ease;
+}
+
+.dark-mode .route-suggestions {
+  background: #3a3a4e;
+}
+
+.route-suggestions h4 {
+  color: #667eea;
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+  transition: color 0.3s ease;
+}
+
+.dark-mode .route-suggestions h4 {
+  color: #a0c4ff;
+}
+
+.route-suggestions ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.route-suggestions li {
+  padding: 0.6rem 0;
+  color: #666;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  transition: color 0.3s ease;
+}
+
+.dark-mode .route-suggestions li {
+  color: #aaa;
+}
+
 /* Welcome Section */
 .welcome-section {
   min-height: 500px;
