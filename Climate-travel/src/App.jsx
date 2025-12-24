@@ -62,8 +62,34 @@ function App() {
     }
   };
 
+  // Get weather-based background class
+  const getWeatherClass = () => {
+    if (!data) return "weather-default";
+    
+    const condition = data.condition.toLowerCase();
+    
+    if (condition.includes("sunny") || condition.includes("clear")) {
+      return "weather-sunny";
+    } else if (condition.includes("cloud")) {
+      return "weather-cloudy";
+    } else if (condition.includes("rain") || condition.includes("drizzle")) {
+      return "weather-rainy";
+    } else if (condition.includes("snow")) {
+      return "weather-snowy";
+    } else if (condition.includes("wind")) {
+      return "weather-windy";
+    } else if (condition.includes("fog") || condition.includes("mist")) {
+      return "weather-foggy";
+    } else if (condition.includes("thunder") || condition.includes("storm")) {
+      return "weather-stormy";
+    } else if (condition.includes("hail")) {
+      return "weather-hail";
+    }
+    return "weather-default";
+  };
+
   return (
-    <div className={`app-container ${isDarkMode ? "dark-mode" : "light-mode"}`}>
+    <div className={`app-container ${isDarkMode ? "dark-mode" : "light-mode"} ${getWeatherClass()}`}>
       <Header isDarkMode={isDarkMode} onToggleTheme={() => setIsDarkMode(!isDarkMode)} />
       <div className="main-content">
         {/* Home Section */}
