@@ -91,7 +91,7 @@ const Search = ({ onSearch, loading }) => {
           {loading ? "Searching..." : "Search"}
         </button>
       </div>
-      <p className="search-hint">💡 Try searching for: London, New York, Tokyo, Mumbai...</p>
+      <p className="search-hint">💡 Try searching for: Mumbai, London, New York, Tokyo, Mumbai...</p>
     </div>
   );
 };
