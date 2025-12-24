@@ -1758,6 +1758,12 @@ body {
     width: 100%;
     justify-content: center;
     flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .header-nav a {
+    padding: 0.5rem 0.75rem;
+    font-size: 0.9rem;
   }
 
   .search-input-group {
@@ -1838,8 +1844,8 @@ body {
   }
 
   .header-nav a {
-    font-size: 0.8rem;
-    padding: 0.4rem 0.8rem;
+    font-size: 0.75rem;
+    padding: 0.35rem 0.6rem;
   }
 
   .welcome-card {
